@@ -1,10 +1,7 @@
-import { View, Text } from "react-native";
 import React from "react";
+import Image from "next/image";
+import logo from "../asset/antmoss.svg";
 
 export default function Logo() {
-  return (
-    <View>
-      <Text>Logo</Text>
-    </View>
-  );
+  return <Image src={logo} height={70} width={70} alt="Antony Moss logo" />;
 }

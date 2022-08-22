@@ -1,26 +1,30 @@
-import clsx from "clsx";
+import { FaTwitter, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
+import Link from "next/link";
 
 interface ButtonProps {
-  children: string;
-  outline?: boolean;
-  className?: string;
+  name: string;
+  url: string;
 }
 
-export default function Button(props: ButtonProps) {
-  const { children, outline, className, ...rest } = props;
+function Icon(name: string) {
+  if (name === "Twitter") {
+    return <FaTwitter size={25} />;
+  }
+  if (name === "Linkedin") {
+    return <FaLinkedinIn size={25} />;
+  }
+  if (name === "Contact") {
+    return <FaEnvelope size={25} />;
+  }
+}
 
-  const classNames = clsx(
-    {
-      btn: true,
-      "btn-default": !outline,
-      "btn-outline": outline,
-    },
-    className
-  );
-
+export default function Button({ name, url }: ButtonProps) {
   return (
-    <button className={classNames} {...rest}>
-      {children}
-    </button>
+    <Link href={url} passHref={true}>
+      <button className="btn">
+        <span>{name}</span>
+        <span>{Icon(name)}</span>
+      </button>
+    </Link>
   );
 }

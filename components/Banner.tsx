@@ -7,8 +7,8 @@ export default function Banner() {
       <div className="container">
         <h1 className="banner__title font-display">
           Hello, I'm
-          <span className="text-green">Antony Moss.</span>
-          <span className="text-green">A Creative Front-End Developer</span>
+          <span className="text-primary"> Antony Moss.</span>
+          <span className="text-primary"> A Creative Front-End Developer</span>
         </h1>
       </div>
     </div>

@@ -1,5 +1,10 @@
 import React from "react";
+import Section from "./Section";
 
 export default function Skills() {
-  return <div>Skills</div>;
+  return (
+    <Section grey>
+      <div className="flex">asdfg</div>
+    </Section>
+  );
 }
