@@ -1,0 +1,24 @@
+body {
+  color: #354358;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  background-color: #1b242f;
+
+  &__title {
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+}
