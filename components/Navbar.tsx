@@ -4,12 +4,34 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <>
-      <nav className="text-white">
-        <Link href="#home">Home</Link>
-        <Link href="#about">About</Link>
-        <Link href="#skills">Skills</Link>
-        <Link href="#resume">Resume</Link>
-        <Link href="#contact">Contact</Link>
+      <nav className="text-white flex self-stretch w-auto ml-auto">
+        <ul className="flex relative w-full">
+          <li className="flex">
+            <Link href="#home">
+              <a className="p-10">Home</a>
+            </Link>
+          </li>
+          <li className="flex">
+            <Link href="#about">
+              <a className="p-10">About</a>
+            </Link>
+          </li>
+          <li className="flex">
+            <Link href="#skills">
+              <a className="p-10">Skills</a>
+            </Link>
+          </li>
+          <li className="flex">
+            <Link href="#resume">
+              <a className="p-10">Resume</a>
+            </Link>
+          </li>
+          <li className="flex">
+            <Link href="#contact">
+              <a className="p-10">Contact</a>
+            </Link>
+          </li>
+        </ul>
       </nav>
     </>
   );

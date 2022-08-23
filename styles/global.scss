@@ -10,16 +10,28 @@ p + p {
   @apply mt-4;
 }
 
+.header {
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 35%;
+    height: 100%;
+    background-color: #5ab578;
+    content: " ";
+    -webkit-transform: skew(20deg);
+    transform: skew(20deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+  }
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 10px;
-  display: grid;
-
-  > * {
-    margin: auto;
-  }
 }
 
 .banner {
@@ -60,6 +72,12 @@ p + p {
     height: 3px;
     margin-top: 8px;
   }
+
+  &--full-line {
+    &::after {
+      width: 100%;
+    }
+  }
 }
 
 .btn {
@@ -79,33 +97,78 @@ p + p {
   cursor: pointer;
   transition: 0.3s;
 
-  //   &::before {
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     left: auto;
-  //     z-index: 2;
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //     width: 60px;
-  //     height: 100%;
-  //     font-size: 130%;
-  //   }
+  &-outline {
+    border: 2px solid #5ab578;
+  }
 
-  //   &::after {
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     z-index: 0;
-  //     width: 70px;
-  //     height: 200%;
-  //     background: #1b242f;
-  //     -webkit-transform: rotate(-20deg);
-  //     transform: rotate(-20deg);
-  //     -webkit-transform-origin: 0 0;
-  //     transform-origin: 0 0;
-  //     content: "";
-  //     transition: 0.3s;
-  //   }
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  span + span {
+    margin-left: 40px;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+    font-size: 130%;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    width: 70px;
+    height: 200%;
+    background: #1b242f;
+    -webkit-transform: rotate(-20deg);
+    transform: rotate(-20deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    content: "";
+    transition: 0.3s;
+  }
+}
+
+.resume {
+  &__details {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    overflow: hidden;
+    transition: all 0.3s;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 0;
+      width: 105px;
+      height: 200%;
+      background: #1b242f;
+      -webkit-transform: rotate(-20deg);
+      transform: rotate(-20deg);
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      content: "";
+      transition: 0.3s;
+    }
+  }
+
+  &__text {
+    flex-basis: 70%;
+  }
 }

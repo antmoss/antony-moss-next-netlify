@@ -10,6 +10,13 @@ export default function Banner() {
           <span className="text-primary"> Antony Moss.</span>
           <span className="text-primary"> A Creative Front-End Developer</span>
         </h1>
+
+        <Button
+          name="Find out more"
+          url="#about"
+          classes="mt-16 w-fit"
+          outline
+        ></Button>
       </div>
     </div>
   );

@@ -1,9 +1,18 @@
-import { FaTwitter, FaEnvelope, FaLinkedinIn } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaEnvelope,
+  FaLinkedinIn,
+  FaArrowRight,
+} from "react-icons/fa";
 import Link from "next/link";
+import clsx from "clsx";
 
 interface ButtonProps {
   name: string;
   url: string;
+  classes?: string;
+  className?: string;
+  outline?: boolean;
 }
 
 function Icon(name: string) {
@@ -16,15 +25,33 @@ function Icon(name: string) {
   if (name === "Contact") {
     return <FaEnvelope size={25} />;
   }
+  if (name === "Find out more") {
+    return <FaArrowRight size={25} />;
+  }
 }
 
-export default function Button({ name, url }: ButtonProps) {
+export default function Button({
+  name,
+  url,
+  classes,
+  className,
+  outline,
+}: ButtonProps) {
+  const classNames = clsx(
+    {
+      btn: true,
+      "btn-default": !outline,
+      "btn-outline": outline,
+    },
+    className
+  );
+
   return (
     <Link href={url} passHref={true}>
-      <button className="btn">
+      <a className={`${classNames} ${classes}`}>
         <span>{name}</span>
         <span>{Icon(name)}</span>
-      </button>
+      </a>
     </Link>
   );
 }
