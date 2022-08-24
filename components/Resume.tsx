@@ -75,14 +75,14 @@ export default function Resume() {
   return (
     <Section id="resume">
       <div className="flex justify-center mb-10">
-        <h2 className="font-semibold text-2xl heading heading--full-line">
+        <h2 className="text-2xl font-semi heading heading--full-line">
           Resume
         </h2>
       </div>
 
       <div className="flex -m-8">
-        <div className="w-1/2 p-8 resume">
-          <h3>
+        <div className="w-1/2 p-8 resume resume--left">
+          <h3 className="text-xl font-display">
             <span>Education</span>
           </h3>
           <ul className="py-10 relative z-10">
@@ -98,8 +98,8 @@ export default function Resume() {
           </ul>
         </div>
 
-        <div className="w-1/2 p-8">
-          <h3>
+        <div className="w-1/2 p-8 resume resume--right">
+          <h3 className="text-xl font-display">
             <span>EXPERIENCES</span>
           </h3>
           <ul className="py-10 relative z-10">

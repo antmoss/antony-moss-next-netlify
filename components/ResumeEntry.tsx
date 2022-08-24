@@ -27,7 +27,7 @@ export default function ResumeEntry({
   return (
     <li className="relative cursor-pointer">
       <button
-        className={`relative border-grey border text-left w-full ${
+        className={`relative border-greyMid border text-left w-full resume__item-inner ${
           id === 1 || id === 4 ? "" : "mt-4"
         }`}
         onClick={() => toggle(id)}

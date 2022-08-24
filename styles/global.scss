@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  color: #354358;
+  color: #777;
 }
 
 p + p {
@@ -170,5 +170,122 @@ p + p {
 
   &__text {
     flex-basis: 70%;
+  }
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+
+  h3 {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    max-width: 200px;
+
+    span {
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: " ";
+    top: 0;
+    z-index: 0;
+    width: 1px;
+    height: calc(100% - 70px);
+    margin-top: 50px;
+    background-color: #dddddd;
+  }
+
+  &__item-inner {
+    &::before {
+      border-style: solid;
+      height: 0;
+      width: 0;
+      border-color: transparent #dddddd transparent transparent;
+      border-width: 10px 10px 10px 0;
+      left: -10px;
+      content: " ";
+      position: absolute;
+      top: 20px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background-color: #1b242f;
+      border: 6px solid #5ab578;
+      border-radius: 100%;
+    }
+
+    .resume--left & {
+      &::after {
+        right: -10px;
+      }
+      &::before {
+        border-color: transparent transparent transparent #dddddd;
+        border-width: 10px 0 10px 10px;
+        right: -10px;
+        left: initial;
+      }
+    }
+
+    .resume--right & {
+      &::after {
+        left: -10px;
+      }
+    }
+  }
+
+  &--left {
+    margin-right: 30px;
+
+    &::after {
+      right: 0;
+      left: initial;
+    }
+
+    h3 {
+      align-self: flex-end;
+
+      &::after {
+        margin-left: 10px;
+        width: 100px;
+        border-bottom: 3px dotted #dddddd;
+        content: " ";
+        position: relative;
+        z-index: 0;
+      }
+    }
+  }
+
+  &--right {
+    margin-left: 30px;
+
+    &::after {
+      left: 0;
+    }
+
+    h3 {
+      align-self: flex-start;
+
+      &::before {
+        margin-right: 10px;
+        width: 100px;
+        border-bottom: 3px dotted #dddddd;
+        content: " ";
+        position: relative;
+        z-index: 0;
+      }
+    }
   }
 }
