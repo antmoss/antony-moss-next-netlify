@@ -36,6 +36,7 @@ const EXPERIENCES = [
     companyUrl: "https://www.deeperthanblue.co.uk/",
     location: "Sheffield",
     summary: "Developing a React Native App for an eCommerce client",
+    id: 4,
   },
   {
     role: "Software Developer",
@@ -45,6 +46,7 @@ const EXPERIENCES = [
     location: "Sheffield",
     summary:
       "Leading projects which involves scoping, building and supporting web applications. Using an atomic design methodology to create a modular Frontend.",
+    id: 5,
   },
   {
     role: "Software Engineer II (Front End)",
@@ -54,15 +56,21 @@ const EXPERIENCES = [
     location: "Sheffield",
     summary:
       "As part of a team – I create responsive front-end web solutions using semantic HTML, CSS & JavaScript. Progressive enhancement, accessibility, usability and search engine optimization are my priorities.",
+    id: 6,
   },
 ];
 
 export default function Resume() {
-  const [sumaryVisible, setSumaryVisible] = useState(false);
+  const [educationVisible, setEducationVisible] = useState<number>(0);
+  const [sumaryVisible, setSumaryVisible] = useState<number>(0);
 
-  function handleButtonPress() {
-    setSumaryVisible(!sumaryVisible);
-  }
+  const handleEducationToggle = (key: number) => {
+    setSumaryVisible(sumaryVisible !== key ? key : 0);
+  };
+
+  const handleExperienceToggle = (key: number) => {
+    setEducationVisible(educationVisible !== key ? key : 0);
+  };
 
   return (
     <Section id="resume">
@@ -72,22 +80,41 @@ export default function Resume() {
         </h2>
       </div>
 
-      <div className="flex">
-        <div className="w-1/2 resume">
+      <div className="flex -m-8">
+        <div className="w-1/2 p-8 resume">
           <h3>
             <span>Education</span>
           </h3>
           <ul className="py-10 relative z-10">
-            {EDUCATION.map((each, index) => (
+            {EDUCATION.map(({ id, ...rest }) => (
               <ResumeEntry
-                key={each.id}
-                details={each}
-                onToggle={handleButtonPress}
+                key={id}
+                details={rest}
+                id={id}
+                toggle={handleEducationToggle}
+                open={sumaryVisible === id}
               />
             ))}
           </ul>
         </div>
-        <div className="w-1/2"></div>
+
+        <div className="w-1/2 p-8">
+          <h3>
+            <span>EXPERIENCES</span>
+          </h3>
+          <ul className="py-10 relative z-10">
+            {EXPERIENCES.map(({ id, ...rest }) => (
+              <ResumeEntry
+                experience
+                key={id}
+                details={rest}
+                id={id}
+                toggle={handleExperienceToggle}
+                open={educationVisible === id}
+              />
+            ))}
+          </ul>
+        </div>
       </div>
     </Section>
   );
