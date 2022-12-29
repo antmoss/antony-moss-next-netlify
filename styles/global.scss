@@ -1,3 +1,18 @@
+$brand-device-angle: 20deg;
+
+@mixin brand-slant-element($width, $color: #5ab578) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: $width;
+  height: 100%;
+  background-color: $color;
+  content: " ";
+  transform: skew($brand-device-angle);
+  transform-origin: 0 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -12,18 +27,7 @@ p + p {
 
 .header {
   &::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    width: 35%;
-    height: 100%;
-    background-color: #5ab578;
-    content: " ";
-    -webkit-transform: skew(20deg);
-    transform: skew(20deg);
-    -webkit-transform-origin: 0 100%;
-    transform-origin: 0 100%;
+    @include brand-slant-element(35%);
   }
 }
 
@@ -287,5 +291,13 @@ p + p {
         z-index: 0;
       }
     }
+  }
+}
+
+.footer {
+  position: relative;
+  
+  &::before {
+    @include brand-slant-element(60%);
   }
 }
