@@ -47,7 +47,7 @@ export default function Contact() {
                     </div>
 
                     <div className="md:w-1/2 p-4">
-                        <form action="POST" data-netlify="true">
+                        <form action="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
                             <div className="flex flex-wrap">
                                 <label className="text-white mb-2 text-lg" htmlFor="name">Name</label>
                                 <input className="w-full px-2 py-3" id="name" name="name" placeholder="Enter Name" type="text" />
@@ -59,7 +59,7 @@ export default function Contact() {
 
                             <div className="flex flex-wrap mt-5">
                                 <label className="text-white mb-2 text-lg" htmlFor="message">Message</label>
-                                <textarea className="w-full px-2 py-3" id="message" name="message" placeholder="Enter Email" />
+                                <textarea className="w-full px-2 py-3" id="message" name="message" placeholder="Enter Message" />
                             </div>
 
                             <div data-netlify-recaptcha="true"></div>

@@ -7,11 +7,6 @@ export default function Navbar() {
       <nav className="text-white flex self-stretch w-auto ml-auto">
         <ul className="flex relative w-full">
           <li className="flex">
-            <Link href="#home">
-              <a className="p-10">Home</a>
-            </Link>
-          </li>
-          <li className="flex">
             <Link href="#about">
               <a className="p-10">About</a>
             </Link>
