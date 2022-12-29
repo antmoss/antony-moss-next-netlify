@@ -49,8 +49,7 @@ export default function Contact() {
                     <div className="md:w-1/2 p-4">
                         <form method="POST"
                             data-netlify="true"
-                            data-netlify-honeypot="bot-field"
-                            data-netlify-recaptcha="true"
+                            netlify-honeypot="bot-field"
                             name='contact'
                             action="/success">
                             <input type="hidden" name="form-name" value="contact" />
