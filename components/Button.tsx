@@ -3,13 +3,14 @@ import {
   FaEnvelope,
   FaLinkedinIn,
   FaArrowRight,
+  FaMailchimp,
 } from "react-icons/fa";
 import Link from "next/link";
 import clsx from "clsx";
 
 interface ButtonProps {
   name: string;
-  url: string;
+  url?: string;
   classes?: string;
   className?: string;
   outline?: boolean;
@@ -27,6 +28,9 @@ function Icon(name: string) {
   }
   if (name === "Find out more") {
     return <FaArrowRight size={25} />;
+  }
+  if (name === "Send message") {
+    return <FaMailchimp size={25} />;
   }
 }
 
