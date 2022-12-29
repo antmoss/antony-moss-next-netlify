@@ -4,6 +4,7 @@ import {
   FaLinkedinIn,
   FaArrowRight,
   FaMailchimp,
+  FaHome,
 } from "react-icons/fa";
 import Link from "next/link";
 import clsx from "clsx";
@@ -29,8 +30,8 @@ function Icon(name: string) {
   if (name === "Find out more") {
     return <FaArrowRight size={25} />;
   }
-  if (name === "Send message") {
-    return <FaMailchimp size={25} />;
+    if (name === "Go back home") {
+    return <FaHome size={25} />;
   }
 }
 
