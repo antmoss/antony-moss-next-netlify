@@ -39,7 +39,7 @@ const EXPERIENCES = [
     id: 4,
   },
   {
-    role: "Software Developer",
+    role: "Front End Developer",
     date: "2022",
     company: "Evoluted",
     companyUrl: "https://www.evoluted.net/",

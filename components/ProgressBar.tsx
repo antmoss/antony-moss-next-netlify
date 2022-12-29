@@ -46,6 +46,7 @@ export default function ProgressBar({
     height: "100%",
     display: "flex",
     alignItems: "center",
+    whiteSpace: 'nowrap',
   };
 
   return (
