@@ -23,7 +23,6 @@ export default function Home() {
             <Header />
             <Banner />
             <Main />
-            <Projects />
             <Contact />
             <Footer />
         </div>
