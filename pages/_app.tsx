@@ -5,11 +5,8 @@ import "../styles/global.css";
 import { useRef } from 'react';
 
 function MyApp({ Component, pageProps }: AppProps) {
-    const refScrollUp = useRef();
-
     return (
         <>
-            <div ref={refScrollUp}> </div>
             <Navbar />
             <Component {...pageProps} />
         </>

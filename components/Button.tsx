@@ -10,7 +10,7 @@ import clsx from "clsx";
 
 interface ButtonProps {
   name: string;
-  url?: string;
+  url: string;
   classes?: string;
   className?: string;
   outline?: boolean;

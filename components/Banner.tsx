@@ -6,7 +6,7 @@ export default function Banner() {
     <div className="banner">
       <div className="container">
         <h1 className="banner__title font-display">
-          Hello, I'm
+          Hello, I&apos;m
           <span className="text-primary"> Antony Moss.</span>
           <span className="text-primary"> A Creative Front-End Developer</span>
         </h1>

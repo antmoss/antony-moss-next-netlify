@@ -20,7 +20,7 @@ export default function About() {
 
           <div>
             <p>
-              I'm a Web Designer and Developer living and working in Sheffield.
+              I&apos;m a Web Designer and Developer living and working in Sheffield.
               I have a degree in Web Design and have been working professionally
               as a Front-end Developer for over 5 years.
             </p>
@@ -28,11 +28,11 @@ export default function About() {
               As you’d expect an
               <abbr title="Front end">FE</abbr>
               <abbr title="Developer">Dev</abbr>
-              to be, I'm experienced with
+              to be, I&apos;m experienced with
               <abbr title="Hypertext Markup Language">HTML</abbr>,
               <abbr title="Cascading Style Sheet">CSS</abbr> (using Sass) and
               JavaScript, including React and Typescript. They make up my core
-              skill set, but I'm also comfortable with version control such as
+              skill set, but I&apos;m also comfortable with version control such as
               Git.
             </p>
           </div>
