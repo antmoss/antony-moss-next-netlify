@@ -47,7 +47,11 @@ export default function Contact() {
                     </div>
 
                     <div className="md:w-1/2 p-4">
-                        <form action="POST" data-netlify="true" data-netlify-honeypot="bot-field" data-netlify-recaptcha="true">
+                        <form action="POST"
+                            data-netlify="true"
+                            data-netlify-honeypot="bot-field"
+                            data-netlify-recaptcha="true">
+                                
                             <div className="flex flex-wrap">
                                 <label className="text-white mb-2 text-lg" htmlFor="name">Name</label>
                                 <input className="w-full px-2 py-3" id="name" name="name" placeholder="Enter Name" type="text" />
